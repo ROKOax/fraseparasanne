@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frase del Día</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fce4ec;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #b39ddb;
+        }
+
+        input[type="password"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #c5cae9;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #9fa8da;
+        }
+
+        .message {
+            margin-top: 20px;
+            padding: 15px;
+            display: none;
+            background-color: #f3e5f5;
+            border-radius: 5px;
+            color: #6a1b9a;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Frase del Día</h1>
+        <p>Ingresa la clave para desbloquear tu frase especial:</p>
+        <input type="password" id="password" placeholder="Escribe la clave aquí">
+        <button onclick="checkPassword()">Desbloquear</button>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        const correctPassword = "tequiero"; // Clave diaria
+        const dailyPhrase = "Eres la persona más especial en mi vida. ❤️"; // Frase del día
+
+        function checkPassword() {
+            const enteredPassword = document.getElementById('password').value;
+            const messageDiv = document.getElementById('message');
+
+            if (enteredPassword === correctPassword) {
+                messageDiv.textContent = dailyPhrase;
+                messageDiv.style.display = "block";
+            } else {
+                messageDiv.textContent = "Clave incorrecta. Inténtalo de nuevo.";
+                messageDiv.style.display = "block";
+                messageDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
